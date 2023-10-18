@@ -21,6 +21,9 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
         </button>
+        <audio autoplay>
+            <source src="images/Dlala_Regal_Ft_Scotts_Maphuma_-_Umshini_Song_.mp3"><source/>
+        </audio>
     </div>
 
     <div class="card text-bg-dark text-end">
