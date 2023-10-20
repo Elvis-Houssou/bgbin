@@ -29,22 +29,33 @@
     <div class="card text-bg-dark text-end">
         <img src="images/HW7B0983.png" class="card-img opacity-50" alt="...">
         <div class="card-img-overlay row align-items-center">
-            <div>
-                <h5 class="card-title display-1 font-weight-bolder">{!! __("message.nav_2") !!}</h5>
-                <a href="{{route('homme')}}" role="button" class="btn btn-outline-light fs-3">{!! __("message.home 1") !!}</a>
+            <div id="masthead">
+                <h1 class="card-text display-4">{!! __("message.nav_2") !!}</h1>
+                <a class="btn btn-outline-light" href="{{route('homme')}}" id="mast">{!! __("message.home 1") !!}</a>
             </div>
         </div>
     </div>
 
     <div class="card text-bg-dark text-start">
-        <img src="images/_MG_1280.png" class="card-img opacity-50" alt="...">
+        <img src="images/IMG_0643.jpg" class="card-img opacity-50" alt="...">
         <div class="card-img-overlay row align-items-center">
-            <div>
-                <h5 class="card-title display-1 font-weight-bolder">{!! __("message.nav_3") !!}</h5>
-                <a href="{{route('femme')}}" role="button" class="btn btn-outline-light fs-3">{!! __("message.home 1") !!}</a>
+            <div id="masthead">
+                <h5 class="card-text display-4 font-weight-bolder">{!! __("message.nav_3") !!}</h5>
+                <a href="{{route('femme')}}" class="btn btn-outline-light" id="mast">{!! __("message.home 1") !!}</a>
             </div>
         </div>
     </div>
+
+    <style>
+
+        #masthead {
+            margin-top: -10px;
+        }
+        #mast {
+            font-size: 1rem;
+            margin-top: -10px;
+        }
+    </style>
 
     <h1 class="text-center display-2 p-5" id="popular">{!! __("message.home 2") !!}</h1>
     <div class="container-fluid">
@@ -52,15 +63,15 @@
             @foreach ($products as $product )
                 <div class="col px-1">
 
-                    <div class="card text-bg-dark bg-black" data-bs-theme="dark">
+                    <div class="card text-bg-dark bg-black mt-5 mx-2" data-bs-theme="dark">
                         <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="300">
                         <a href="{{route('show', $product->id)}}" class="nav-link text-light">
                             <div class="card-body ">
-                                <h5 class="card-title ">{{$product->categories->gender}}</h5>
-                                <div class=" d-flex justify-content-between align-items-center">
-                                    <h3 class="card-text"> {{$product->sub_categories->type}} </h3>
-                                    <h5 class="card-text ">{{$product->name}}</h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="card-text">{{$product->categories->gender}}</h6>
+                                    <h6 class="card-text">{{$product->sub_categories->type}}</h6>
                                 </div>
+                                    <h5 class="card-text ">{{$product->name}}</h5>
                             </div>
                         </a>
                     </div>
@@ -73,7 +84,7 @@
 
     <h1 class="text-center display-2" id="popular">@BGBIN</h1>
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 ">
-        <div class="card text-bg-dark text-center">
+        <div class="card text-bg-dark text-center mt-5 mx-2">
             <img src="{{url('images/lien 1.jpg')}}" class="card-img opacity-50" alt="...">
             <div class="card-img-overlay row align-items-center">
                 <div>
@@ -85,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="card text-bg-dark text-center" id="po">
+        <div class="card text-bg-dark text-center mt-5 mx-2">
             <img src="{{url('images/lien 3.jpg')}}" class="card-img opacity-50 " alt="...">
             <div class="card-img-overlay row align-items-center">
                 <div>
@@ -120,7 +131,7 @@
                 </div>
             </div>
         </div>
-        <div class="card text-bg-dark text-center">
+        <div class="card text-bg-dark text-center mt-5 mx-2">
             <img src="{{url('images/_MG_0892.png')}}" class="card-img opacity-50" alt="...">
             <div class="card-img-overlay row align-items-center">
                 <div>
@@ -132,7 +143,7 @@
                 </div>
             </div>
         </div>
-        <div class="card text-bg-dark text-center">
+        <div class="card text-bg-dark text-center mt-5 mx-2">
             <img src="{{url('images/lien 2.jpg')}}" class="card-img opacity-50" alt="...">
             <div class="card-img-overlay row align-items-center">
                 <div>

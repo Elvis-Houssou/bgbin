@@ -7,12 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('BGBIN', 'BGBIN') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/colonna-mt" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('favicon.ico')}}">
 
 
     <!-- Scripts -->
@@ -23,7 +24,7 @@
         <nav class="navbar sticky-top navbar-expand-lg bg-black" data-bs-theme="dark" style="z-index:1000;">
             <div class="container container-fluid">
 
-                <img class="navbar-brand order-1" src="{{url('images/FB_IMG_1694522074823.png')}}" alt="" width="7%">
+                <img class="navbar-brand order-1" src="{{url('images/FB_IMG_1694522074823.png')}}" alt="" width="70">
 
                 <div class="collapse navbar-collapse order-lg-1 order-3" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -359,6 +360,10 @@
             border-radius: 35px;
             font-size: 12px;
             text-align: center;
+        }
+
+        img {
+            object-fit: cover;
         }
 </style>
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 class="text-center" id="popular">{!! __("message.faqs 1") !!}</h1>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2 py-5">
+<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2 py-5">
     <div class="col align-items-center text-start">
         @foreach (array_combine($titles, $answers) as $title => $answer)
                 <div class="dropbox">

@@ -8,7 +8,7 @@
                     @csrf
 
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                           <label for="inputPassword6" class="col-form-label">{!! __("message.couture 2") !!}</label>
                         </div>
@@ -23,7 +23,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                           <label for="inputPassword6" class="col-form-label">{!! __("message.couture 4") !!}</label>
                         </div>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-5 row g-3 align-items-center justify-content-between">
+                    <div class="mb-5 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                           <label for="inputPassword6" class="col-form-label" >{!! __("message.couture 5") !!}</label>
                         </div>
@@ -50,7 +50,7 @@
 
                 <h2 class="mb-5 text-center" id="popular">{!! __("message.couture 6") !!}</h2>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" id="textVal" class="col-form-label">{!! __("message.couture 7") !!}</label>
                         </div>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 8") !!}</label>
                         </div>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 9") !!}</label>
                         </div>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 10") !!}</label>
                         </div>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 11") !!}</label>
                         </div>
@@ -95,7 +95,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 12") !!}</label>
                         </div>
@@ -106,7 +106,7 @@
 
                     {{-- bas --}}
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between" id="pantsForm">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between" id="pantsForm">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 13") !!}</label>
                         </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 14") !!}</label>
                         </div>
@@ -124,7 +124,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 15") !!}</label>
                         </div>
@@ -133,7 +133,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 16") !!}</label>
                         </div>
@@ -142,7 +142,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 17") !!}</label>
                         </div>
@@ -151,7 +151,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row g-3 align-items-center justify-content-between">
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
                         <label for="inputPassword6" class="col-form-label">{!! __("message.couture 18") !!}</label>
                         </div>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
 
-                    <h2 class="text-center" id="popular">{!! __("message.couture 19") !!}</h2>
+                    <h2 class="text-center mt-5" id="popular">{!! __("message.couture 19") !!}</h2>
                     <br>
                     <div class="d-flex align-items-center overflow-x-scroll">
                         @foreach ($bands as $band )

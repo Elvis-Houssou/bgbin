@@ -11,38 +11,15 @@ use App\Http\Requests\UpdateBandRequest;
 
 class BandController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
      /**
      * Display a listing of the resource.
      */
     public function bandes()
     {
-        $bands = Band::latest()->paginate(5);
+        $bands = Band::select('title', 'images')->get();
         return view('bandes', compact('bands'))->with('i', (request()->input('page', 1) - 1) * 4);
 
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreBandRequest $request)
-    {
-        //
     }
 
     /**
@@ -75,35 +52,4 @@ class BandController extends Controller
         return redirect()->route('bands');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Band $band)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Band $band)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateBandRequest $request, Band $band)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Band $band)
-    {
-        //
-    }
 }

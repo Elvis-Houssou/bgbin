@@ -28,7 +28,7 @@ class OrderController extends Controller
     public function order()
     {
         $categories = Category::all();
-        $products = Product::all();
+        $products = Product::with(['categories'])->get();
         $subCategories = SubCategory::all();
         $bands = Band::all();
         return view('haute_couture', compact('categories', 'subCategories', 'products', 'bands'));

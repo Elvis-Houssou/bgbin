@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Post;
+use App\Models\StandardOrder;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 

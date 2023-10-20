@@ -45,23 +45,8 @@ Route::middleware('language')->prefix('/')->group(function() {
     Route::match(['get', 'post'], '/boutique/{name}', [ProductController::class, 'show'])->name('show');
     Route::match(['get', 'post'],'/haute-couture/save', [OrderController::class, 'saveOrder'])->name('saveOrder');
     Route::get('/change-language/{lang}', [ProductController::class, 'changeLang'])->name('changeLang');
+    Route::match(['get', 'post'], '/boutique/add/{id}', [ProductController::class, 'StandardOrder'])->name('StandardOrder');
 });
-
-// Route::prefix('/')->group(function () {
-//     Route::get('/', [ProductController::class, 'mostRecent'])->name('mostRecent');
-//     Route::get('/bandes', [BandController::class, 'bandes'])->name('bandes');
-//     Route::get('/haute-couture', [OrderController::class, 'order'])->name('order');
-//     Route::get('/a-propos', [ProductController::class, 'about'])->name('about');
-//     Route::get('/FaQs', [ProductController::class, 'FaQs'])->name('FaQs');
-//     Route::get('/contact', [ProductController::class, 'contact'])->name('contact');
-//     Route::match(['get', 'post'],'/haute-couture/save', [OrderController::class, 'saveOrder'])->name('saveOrder');
-// });
-
-// Route::prefix('/boutique')->group(function () {
-// });
-
-// Route::get('/homme', [SubCategoryController::class, 'vestes'])->name('vestes');
-
 
 Auth::routes();
 
@@ -84,21 +69,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function() {
     Route::match(['get', 'post'], '/produits/update/{id}', [ProductController::class, 'updateProduct'])->name('updateProduct');
     Route::match(['get', 'post'], '/bands/add/store', [BandController::class, 'storeBand'])->name('storeBand');
     Route::match(['get', 'post'], '/posts/add/store', [PostController::class, 'storePost'])->name('storePost');
-
     Route::delete('/produits/delete/{id}', [AdminController::class, 'destroyProduct'])->name('destroyProduct');
 });
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('send', [HomeController::class, 'sendnotification'])->name('sendnotification');
-
-
-
-// Route::prefix('/admin')->group(function () {
-//     Route::get('/home', [AdminController::class, 'adminHome'])->name('adminHome');
-//     Route::get('/produits', [AdminController::class, 'products'])->name('products');
-// })->middleware(['auth', 'verified']);
-
-// Route::get('/admin', function () {
-//     return view('admin.home');
-// })->middleware(['auth', 'verified']);

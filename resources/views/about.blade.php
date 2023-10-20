@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <div class="card text-bg-dark text-center">
+    <div class="card text-bg-dark text-center border border-black">
         <img src="{{url('images/image 1.jpg')}}" class="card-img " alt="...">
         <div class="card-img-overlay row align-items-center">
             <div>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="album py-5" >
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center">
+        <div class="d-lg-flex flex-row  row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center">
             <div class="col">
                 <h1 id="popular">
                     {!! __("message.about 2") !!}

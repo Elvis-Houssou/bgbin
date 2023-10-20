@@ -21,44 +21,6 @@
             @endif
         </div>
 
-        {{-- checkBox size --}}
-        <label for="">Tailles</label>
-        <div class="mb-3 d-flex">
-            <div class="form-check " style="padding: 20px;">
-                <input class="form-check-input" type="checkbox" name="size[]" value="S" id="S">
-                <label class="form-check-label" for="flexCheckDefault">
-                  S
-                </label>
-            </div>
-            <div class="form-check" style="padding: 20px;">
-                <input class="form-check-input" type="checkbox" name="size[]" value="M" id="M">
-                <label class="form-check-label" for="flexCheckChecked">
-                    M
-                </label>
-            </div>
-            <div class="form-check" style="padding: 20px;">
-                <input class="form-check-input" type="checkbox" name="size[]" value="L" id="L">
-                <label class="form-check-label" for="flexCheckChecked">
-                    L
-                </label>
-            </div>
-            <div class="form-check" style="padding: 20px;">
-                <input class="form-check-input" type="checkbox" name="size[]" value="XS" id="XS">
-                <label class="form-check-label" for="flexCheckChecked">
-                    XS
-                </label>
-            </div>
-            <div class="form-check" style="padding: 20px;">
-                <input class="form-check-input" type="checkbox" name="size[]" value="XL" id="XL">
-                <label class="form-check-label" for="flexCheckChecked">
-                    XL
-                </label>
-            </div>
-            @if ($errors->has('size'))
-                <span class="text-danger"> {{$errors->first('size')}} </span>
-            @endif
-        </div>
-
         <div class="mb-3">
             <select name="category_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
                 <option selected>Catégorie</option>

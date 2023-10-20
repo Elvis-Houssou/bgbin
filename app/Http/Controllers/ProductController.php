@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProductRequest;
 use Illuminate\Notifications\Notification;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\StandardOrder;
+use GuzzleHttp\Promise\Create;
 
 class ProductController extends Controller
 {
@@ -31,9 +33,11 @@ class ProductController extends Controller
      */
     public function mostRecent()
     {
-        $products = Product::with('categories')->latest()->paginate(4);
-        $posts = Post::all();
-        return view('welcome', compact('products', 'posts'))->with('i', (request()->input('page', 1) - 1) * 4);
+        // $products = Product::with('categories')->latest()->paginate(4);
+        $products = Product::with(['categories', 'sub_categories'])->latest()->paginate(4);
+
+        // $posts = Post::pluck('link', 'images', 'icons');
+        return view('welcome', compact('products'));
 
     }
 
@@ -43,8 +47,10 @@ class ProductController extends Controller
      */
     public function homme()
     {
-        $products = Product::with('categories')->where('category_id', 1)->latest()->paginate(50);
-        return view('homme', compact('products'))->with('i', (request()->input('page', 1) - 1) * 4);
+        // $products = Product::pluck('id', 'category_id', 'images', 'sub_category_id', 'name');
+        $products = Product::with(['categories', 'sub_categories'])->get();
+        // $products = Product::select('id', 'category_id', 'images', 'sub_category_id', 'name')->latest()->paginate(20);
+        return view('homme', compact('products'));
 
     }
 
@@ -55,8 +61,11 @@ class ProductController extends Controller
      */
     public function femme()
     {
-        $products = Product::with('categories')->where('category_id', 2)->latest()->paginate(50);
-        return view('femme', compact('products'))->with('i', (request()->input('page', 1) - 1) * 4);
+        // $products = Product::where('category_id', 2)->latest()->paginate(30);
+        $products = Product::with(['categories', 'sub_categories'])->get();
+
+        // $products = Product::select('id', 'category_id', 'images', 'sub_category_id', 'name')->latest()->paginate(20);
+        return view('femme', compact('products'));
 
     }
 
@@ -156,15 +165,11 @@ class ProductController extends Controller
         ]);
         $categorie = Category::find($request->input('category_id'));
         $subCategorie = SubCategory::find($request->input('sub_category_id'));
-        // $size = $request->input('size');
-        $size = implode(',', $request->input('size'));
-        // $size = $request->file('size');
 
 
 
 
         $results = $request->all();
-        $results['size'] = $size;
 
         // dd($results);
 
@@ -188,6 +193,37 @@ class ProductController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     */
+    public function StandardOrder(Request $request, $id)
+    {
+
+        $product = Product::findOrFail($id);
+
+        $request->validate([
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+        ]);
+
+        // $email = $request->input('email');
+        // $phone = $request->input('phone');
+
+        $standardOrder = new StandardOrder;
+        $standardOrder->title = $product->name;
+        $standardOrder->description = $product->description;
+        $standardOrder->images = $product->images;
+        $standardOrder->category_id = $product->category_id;
+        $standardOrder->email = $request->input('email');
+        $standardOrder->phone = $request->input('phone');
+
+        $standardOrder->save();
+
+
+
+        return redirect()->back()->with('success', 'voili voulou');
+    }
+
+    /**
      * Update the specified resource in storage.
      */
     public function updateProduct(UpdateProductRequest $request, Product $product, $id)
@@ -195,37 +231,23 @@ class ProductController extends Controller
         $request = request();
         $categorie = Category::find($request->input('category_id'));
         $subCategorie = SubCategory::find($request->input('sub_category_id'));
-        $size = implode(',', $request->input('size'));
 
 
 
         $results = $request->all();
-        $results['size'] = $size;
 
 
         $images = $request->file('images');
         $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
 
         if ($request->hasFile('images')) {
-                Storage::delete('images' . $product->image);
+            Storage::delete('images' . $product->image);
 
-                if ($request->input('category_id') == 1) {
-                    $images = $request->file('images');
-                    $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
-                    $storage = public_path('images');
-                    $images->move($storage, $filename);
-                    $results['images'] = $filename;
-                }else{
-                    $images = $request->file('images');
-                    $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
-                    $storage = public_path('images');
-                    $images->move($storage, $filename);
-                    $results['images'] = $filename;
-                }
-                // $images->move(storage_path('app/public/images'), $filename);
-                // $images->move('images', $filename);
-
-                // $results['images'] = $filename;
+            $images = $request->file('images');
+            $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
+            $storage = public_path('images');
+            $images->move($storage, $filename);
+            $results['images'] = $filename;
         }else{
             $product->image = $request->input('old_image');
         }

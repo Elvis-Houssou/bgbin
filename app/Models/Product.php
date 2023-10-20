@@ -18,7 +18,7 @@ class Product extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'name', 'description', 'images', 'size'
+        'name', 'description', 'images'
     ];
 
     /**
@@ -44,7 +44,7 @@ class Product extends Model
     public function getImagePath()
     {
         switch ($this->sub_category_id) {
-            
+
         }
     }
 }
