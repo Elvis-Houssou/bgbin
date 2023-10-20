@@ -220,7 +220,7 @@ class ProductController extends Controller
 
 
 
-        return redirect()->back()->with('success', 'voili voulou');
+        return redirect()->back()->with('success', 'Votre demande a bien été enregistré nous vous contacterons par mail sous peu');
     }
 
     /**

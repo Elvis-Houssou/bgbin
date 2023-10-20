@@ -146,6 +146,7 @@
                     <select name="" id="" onchange="changeLanguage(this.value)" class="form-select" id="trans">
                         <option {{session()->has('lang_code') ? (session()->get('lang_code') == 'en' ? 'selected' : '') : ''}} value="en">Anglais</option>
                         <option {{session()->has('lang_code') ? (session()->get('lang_code') == 'fr' ? 'selected' : '') : ''}} value="fr">français</option>
+                        <option {{session()->has('lang_code') ? (session()->get('lang_code') == 'de' ? 'selected' : '') : ''}} value="de">Allemand</option>
                     </select>
                 </div>
                 @yield('content')

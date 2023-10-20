@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{session('success')}}
+            </div>
+        @endif
         <h2 class="mb-5 text-center" id="popular">{!! __("message.couture 1") !!}</h2>
         <div class="container-fluid" data-bs-theme="dark">
                 <form action=" {{route('saveOrder')}} " method="POST" enctype="multipart/form-data">

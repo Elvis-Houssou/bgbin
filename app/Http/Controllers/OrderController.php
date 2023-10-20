@@ -30,7 +30,7 @@ class OrderController extends Controller
         $categories = Category::all();
         $products = Product::with(['categories'])->get();
         $subCategories = SubCategory::all();
-        $bands = Band::all();
+        $bands = Band::select('title', 'images')->get();
         return view('haute_couture', compact('categories', 'subCategories', 'products', 'bands'));
     }
 
@@ -75,7 +75,7 @@ class OrderController extends Controller
         // dd($order);
         $order->save();
 
-        return back();
+        return redirect()->back()->with('success', 'Votre demande a bien été enregistré nous vous enverons le devis par mail sous peu');
     }
 
     /**
