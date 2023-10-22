@@ -12,6 +12,23 @@
                 <form action=" {{route('saveOrder')}} " method="POST" enctype="multipart/form-data">
                     @csrf
 
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <label for="inputPassword6" class="col-form-label">Email:</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="email" id="inputText" name="email" class="form-control" aria-describedby="textHelpInline">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <label for="inputPassword6" class="col-form-label">Numéro de téléphone:</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" id="inputText" name="phone" class="form-control" aria-describedby="textHelpInline">
+                        </div>
+                    </div>
 
                     <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
@@ -209,8 +226,6 @@
                             <span class="text-danger"> {{$errors->first('description')}} </span>
                         @endif
                     </div>
-
-
 
 
                     {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}

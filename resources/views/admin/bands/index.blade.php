@@ -25,7 +25,6 @@
                 <tr>
                     <th>titre</th>
                     <th>Images</th>
-                    <th>Nom</th>
                     <th>Action</th>
                 </tr>
                 @foreach ($bands as $band )
@@ -55,7 +54,7 @@
                 {{ $products->links() }}
             </div> --}}
             <div class="d-flex flex-row-reverse">
-                {{-- {{ $products->links("pagination::bootstrap-5") }} --}}
+                {{ $bands->links("pagination::bootstrap-5") }}
             </div>
         </div>
     </div>

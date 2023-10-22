@@ -116,7 +116,7 @@ return [
      'mention 1' => "Rechtliche Hinweise",
      'mention 2' => "Gültig ab 10.10.23",
 
-
+     "best" => "Mantel",
 
 
 ];

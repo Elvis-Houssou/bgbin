@@ -22,33 +22,37 @@
             <br>
 
             <table class="table table-bordered">
-                <tr>
-                    <th>Catégorie</th>
-                    <th>Sous Catégorie</th>
-                    <th>Nom</th>
-                    <th>Action</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Sous Catégorie</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
                 @foreach ($products as $product )
-                <tr>
-
-                    <td> {{$product->categories->gender}} </td>
-                    <td> {{$product->sub_categories->type}} </td>
-                    <td>  {{$product->first_name}} </td>
-
-                    <td>
-                        <form action=" {{ route('destroyProduct', $product->id) }} " method="POST">
-                                @csrf
-                            <span class="edit">
-                                <a class="btn btn-primary" href="{{ route('editProduct', $product->id) }} ">Edit</a>
-                            </span>
-                            @csrf
-                            @method('DELETE')
-                            <span class="del">
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Etes-vous sûre ?')">Delete</button>
-                            </span>
-                        </form>
-                    </td>
-                </tr>
+                    <tbody>
+                        <tr>
+                            <th >{{$product->categories->gender}}</th>
+                            <td>{{$product->sub_categories->type}}</td>
+                            <td>{{$product->name}}</td>
+                            <td> <img src="{{asset('images/'.$product->images)}}" alt="" class="rounded" width="80" height="80"></td>
+                            <td>
+                                <form action=" {{ route('destroyProduct', $product->id) }} " method="POST" class="d-lg-flex">
+                                    @csrf
+                                    <div class="edit">
+                                        <a class="btn btn-primary" href="{{ route('editProduct', $product->id) }} ">Edit</a>
+                                    </div>
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="del">
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Etes-vous sûre ?')">Delete</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
                 @endforeach
             </table>
 
@@ -56,7 +60,7 @@
                 {{ $products->links() }}
             </div> --}}
             <div class="d-flex flex-row-reverse">
-                {{-- {{ $products->links("pagination::bootstrap-5") }} --}}
+                {{ $products->links("pagination::bootstrap-5") }}
             </div>
         </div>
     </div>

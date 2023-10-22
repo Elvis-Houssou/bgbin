@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Band;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Mail\SelfNotification;
+use Illuminate\Support\Facades\Mail;
+// use App\Notifications\SelfNotification;
+use App\Notifications\mailNotification;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
-use App\Models\Band;
 
 class OrderController extends Controller
 {
@@ -30,7 +35,7 @@ class OrderController extends Controller
         $categories = Category::all();
         $products = Product::with(['categories'])->get();
         $subCategories = SubCategory::all();
-        $bands = Band::select('title', 'images')->get();
+        $bands = Band::select('id', 'title', 'images')->get();
         return view('haute_couture', compact('categories', 'subCategories', 'products', 'bands'));
     }
 
@@ -39,6 +44,7 @@ class OrderController extends Controller
      */
     public function saveOrder(Request $request)
     {
+       try {
         $request = request();
         // $request->validate([
         //     'description' => 'required',
@@ -74,6 +80,18 @@ class OrderController extends Controller
         $order->bands()->associate($band);
         // dd($order);
         $order->save();
+
+        //verifier s'il est inscrit
+        if ($order) {
+            $order->notify(new mailNotification($request));
+            Mail::to('bgbincreations@gmail.com')->send(new SelfNotification($order));
+        }
+       } catch (\Throwable $th) {
+        dd($th);
+       }
+
+        // $user = User::first();
+        // $user->notify(new mailNotification($details, $request->validate()));
 
         return redirect()->back()->with('success', 'Votre demande a bien été enregistré nous vous enverons le devis par mail sous peu');
     }

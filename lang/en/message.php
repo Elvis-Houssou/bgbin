@@ -115,5 +115,6 @@ return [
     'mention 1' => "Legal notices",
     'mention 2' => "Effective as of 10/10/23",
 
+    "best" => "Coat",
 
 ];

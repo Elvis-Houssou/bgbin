@@ -37,5 +37,9 @@ class SubCategorySeeder extends Seeder
         SubCategory::factory()->create([
             'type' => 'Vestes Femme'
         ]);
+
+        SubCategory::factory()->create([
+            'type' => 'Manteau'
+        ]);
     }
 }

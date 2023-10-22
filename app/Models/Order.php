@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
 class Order extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
 
      /**
@@ -17,7 +18,7 @@ class Order extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'mesure', 'doublure', 'description', 'images'
+        'mesure', 'doublure', 'description', 'images', 'email', 'phone'
     ];
 
     /**

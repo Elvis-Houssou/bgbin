@@ -6,19 +6,18 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Queue\SerializesModels;
 
-class mailNotification extends Notification
+class SelfNotification extends Notification
 {
-    use Queueable;
-
-    private $details;
+    use Queueable, SerializesModels;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($details)
+    public function __construct()
     {
-        $this->details = $details;
+        //
     }
 
     /**
@@ -37,11 +36,8 @@ class mailNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->from('bgbincreations@gmail.com', 'BGBIN')
-            ->line('Merci d\'avoir passer commande chez Bgbin nous vous enverrons un dévis sous peu')
-            ->line('BGBIN vous notifieras via un mail sur votre portable');
-            // ->action($this->details['actionText'], $this->details['actionurl'])
-            // ->line($this->details['message']);
+                    ->line('Vous venez de recevoir une commande.')
+                    ->line('Rendez-vous sur la page administrateur pour plus d\'information.');
     }
 
     /**
