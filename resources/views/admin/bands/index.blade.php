@@ -34,10 +34,10 @@
                     <td> <img src="{{asset('images/'.$band->images)}}" alt="" class="rounded" width="60" height="60"></td>
 
                     <td>
-                        <form action=" {{ route('destroyProduct', $band->id) }} " method="POST">
+                        <form action=" {{ route('destroyBands', $band->id) }} " method="POST">
                                 @csrf
                             <span class="edit">
-                                <a class="btn btn-primary" href="">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('editBands', $band->id) }}">Edit</a>
                             </span>
                             @csrf
                             @method('DELETE')

@@ -7,6 +7,7 @@ use App\Http\Controllers\BandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubCategoryController;
@@ -36,9 +37,13 @@ Route::middleware('language')->prefix('/')->group(function() {
     Route::get('/haute-couture', [OrderController::class, 'order'])->name('order');
     Route::get('/a-propos', [ProductController::class, 'about'])->name('about');
     Route::get('/FaQs', [ProductController::class, 'FaQs'])->name('FaQs');
-    Route::get('/contact', [ProductController::class, 'contact'])->name('contact');
+    
+    Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+    Route::match(['get', 'post'], '/contact/send', [ContactController::class, 'sendMail'])->name('sendMail');
+
     Route::get('/mention-legales', [ProductController::class, 'legales'])->name('legales');
     Route::get('/cgv', [ProductController::class, 'cgv'])->name('cgv');
+
     Route::get('/boutique/homme', [ProductController::class, 'homme'])->name('homme');
     Route::get('/boutique/femme', [ProductController::class, 'femme'])->name('femme');
 
@@ -56,20 +61,25 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function() {
     Route::match(['get', 'post'], '/produits', [AdminController::class, 'products'])->name('products');
     Route::match(['get', 'post'], '/produits/add', [AdminController::class, 'createPage'])->name('createPage');
     Route::match(['get', 'post'], '/produits/edit/{id}', [AdminController::class, 'editProduct'])->name('editProduct');
+    Route::match(['get', 'post'], '/produits/add/store', [ProductController::class, 'storeProduct'])->name('storeProduct');
+    Route::match(['get', 'post'], '/produits/update/{id}', [ProductController::class, 'updateProduct'])->name('updateProduct');
 
     Route::match(['get', 'post'], '/posts', [AdminController::class, 'posts'])->name('posts');
     Route::match(['get', 'post'], '/posts/add', [AdminController::class, 'createPosts'])->name('createPosts');
 
-    Route::match(['get', 'post'], '/bandes', [AdminController::class, 'bands'])->name('bands');
-    Route::match(['get', 'post'], '/bandes/add', [AdminController::class, 'createBands'])->name('createBands');
 
     Route::match(['get', 'post'], '/commandes', [AdminController::class, 'orders'])->name('orders');
 
-    Route::match(['get', 'post'], '/produits/add/store', [ProductController::class, 'storeProduct'])->name('storeProduct');
-    Route::match(['get', 'post'], '/produits/update/{id}', [ProductController::class, 'updateProduct'])->name('updateProduct');
-    Route::match(['get', 'post'], '/bands/add/store', [BandController::class, 'storeBand'])->name('storeBand');
-    Route::match(['get', 'post'], '/posts/add/store', [PostController::class, 'storePost'])->name('storePost');
     Route::delete('/produits/delete/{id}', [AdminController::class, 'destroyProduct'])->name('destroyProduct');
+
+    Route::match(['get', 'post'], '/bandes', [AdminController::class, 'bands'])->name('bands');
+    Route::match(['get', 'post'], '/bandes/add', [AdminController::class, 'createBands'])->name('createBands');
+    Route::match(['get', 'post'], '/bands/add/store', [BandController::class, 'storeBand'])->name('storeBand');
+    Route::match(['get', 'post'], '/bands/edit/{id}', [AdminController::class, 'editBands'])->name('editBands');
+    Route::match(['get', 'post'], '/bands/update/{id}', [BandController::class, 'updateBand'])->name('updateBand');
+    Route::delete('/bands/delete/{id}', [AdminController::class, 'destroyBands'])->name('destroyBands');
+
+    Route::match(['get', 'post'], '/posts/add/store', [PostController::class, 'storePost'])->name('storePost');
 });
 
 

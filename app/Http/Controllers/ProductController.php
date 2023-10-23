@@ -69,23 +69,6 @@ class ProductController extends Controller
 
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function contact()
-    {
-
-        $user = User::all();
-        $details = [
-            'greeting' =>'fsjh',
-            'body' =>'fsjh',
-            'actionText' =>'fsjh',
-            'actionurl' =>'fsjh',
-            'greeting' =>'fsjh',
-        ];
-        return view('contacts', compact('user', 'details'));
-
-    }
 
     /**
      * Display a listing of the resource.
@@ -157,39 +140,42 @@ class ProductController extends Controller
     {
 
 
-        $request = request();
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'size' => 'required',
-        ]);
-        $categorie = Category::find($request->input('category_id'));
-        $subCategorie = SubCategory::find($request->input('sub_category_id'));
+        try {
+            $request = request();
+            $request->validate([
+                'name' => 'required',
+                'description' => 'required',
+            ]);
+            $categorie = Category::find($request->input('category_id'));
+            $subCategorie = SubCategory::find($request->input('sub_category_id'));
 
 
 
 
-        $results = $request->all();
+            $results = $request->all();
 
-        // dd($results);
+            // dd($results);
 
-        $images = $request->file('images');
-        $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
-        $storage = public_path('images');
-        $images->move($storage, $filename);
-        $results['images'] = $filename;
+            $images = $request->file('images');
+            $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
+            $storage = public_path('images');
+            $images->move($storage, $filename);
+            $results['images'] = $filename;
 
-        // dd($results);
-        $product = new Product;
-        $product->fill($results);
+            // dd($results);
+            $product = new Product;
+            $product->fill($results);
 
-        $product->categories()->associate($categorie);
-        $product->sub_categories()->associate($subCategorie);
-        $product->save();
+            $product->categories()->associate($categorie);
+            $product->sub_categories()->associate($subCategorie);
+            $product->save();
 
 
 
-        return redirect()->route('products');
+            return redirect()->route('products');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
     /**
@@ -228,39 +214,47 @@ class ProductController extends Controller
      */
     public function updateProduct(UpdateProductRequest $request, Product $product, $id)
     {
-        $request = request();
-        $categorie = Category::find($request->input('category_id'));
-        $subCategorie = SubCategory::find($request->input('sub_category_id'));
+        try {
+            $request = request();
+            $categorie = Category::find($request->input('category_id'));
+            $subCategorie = SubCategory::find($request->input('sub_category_id'));
 
 
+            $product = Product::find($id);
 
-        $results = $request->all();
+            $results = $request->all();
 
-
-        $images = $request->file('images');
-        $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
-
-        if ($request->hasFile('images')) {
-            Storage::delete('images' . $product->image);
+            $publicPath = 'images/' . $product->images;
 
             $images = $request->file('images');
             $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
-            $storage = public_path('images');
-            $images->move($storage, $filename);
-            $results['images'] = $filename;
-        }else{
-            $product->image = $request->input('old_image');
+            // dd($filename);
+
+            if ($request->hasFile('images')) {
+                unlink($publicPath);
+
+
+
+                $images = $request->file('images');
+                $filename = Str::uuid()->toString(). "." . $images->getClientOriginalExtension();
+                $storage = public_path('images');
+                $images->move($storage, $filename);
+                $results['images'] = $filename;
+            }else{
+                $product->image = $request->input('old_image');
+            }
+
+
+
+            $product->categories()->associate($categorie);
+            $product->sub_categories()->associate($subCategorie);
+            $product->update($results);
+
+
+            return redirect()->route('products');
+        } catch (\Throwable $th) {
+            dd($th);
         }
-
-
-        $product = Product::find($id);
-
-        $product->categories()->associate($categorie);
-        $product->sub_categories()->associate($subCategorie);
-        $product->update($results);
-
-
-        return redirect()->route('products');
     }
 
 }

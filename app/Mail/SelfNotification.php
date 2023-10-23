@@ -4,11 +4,14 @@ namespace App\Mail;
 
 use App\Models\Order;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Attachment;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
+// use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SelfNotification extends Mailable
 {
@@ -27,6 +30,7 @@ class SelfNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            from: new Address('bgbincreations@gmail.com', 'BGBIN'),
             subject: 'Nouvelle Commande',
         );
     }
@@ -41,11 +45,11 @@ class SelfNotification extends Mailable
             with: [
                 'orderEmail' => $this->order->email,
                 'orderPhone' => $this->order->phone,
+                'orderMesure' => $this->order->mesure,
                 'orderDoublure' => $this->order->doublure,
                 'orderDescription' => $this->order->description,
                 'orderCategorie' => $this->order->categories->gender,
                 'orderSubCategorie' => $this->order->sub_categories->type,
-                'orderBande' => $this->order->bands->title,
             ],
         );
     }
@@ -57,6 +61,21 @@ class SelfNotification extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        // $imagePath = public_path('images/' . $this->order->images);
+        // $bandesPath = public_path('images/' . $this->order->bands->images);
+        $test = Attachment::fromPath('images/' . $this->order->images)
+            ->as('Exemple de Commande')
+            ->withMime('image/jpeg');
+
+        $second = Attachment::fromPath('images/' . $this->order->bands->images)
+            ->as('Bande')
+            ->withMime('image/jpeg');
+
+        return [
+           $test,
+            $second,
+            // $imagePath,
+            // $bandesPath,
+        ];
     }
 }

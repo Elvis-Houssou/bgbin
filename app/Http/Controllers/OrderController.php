@@ -84,7 +84,7 @@ class OrderController extends Controller
         //verifier s'il est inscrit
         if ($order) {
             $order->notify(new mailNotification($request));
-            Mail::to('bgbincreations@gmail.com')->send(new SelfNotification($order));
+            Mail::to('houssouelvis@gmail.com')->send(new SelfNotification($order));
         }
        } catch (\Throwable $th) {
         dd($th);
