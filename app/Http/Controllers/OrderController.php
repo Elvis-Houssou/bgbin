@@ -12,7 +12,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Mail\SelfNotification;
 use Illuminate\Support\Facades\Mail;
-// use App\Notifications\SelfNotification;
 use App\Notifications\mailNotification;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;

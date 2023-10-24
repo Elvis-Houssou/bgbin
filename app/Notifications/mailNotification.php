@@ -38,8 +38,8 @@ class mailNotification extends Notification
     {
         return (new MailMessage)
             ->from('bgbincreations@gmail.com', 'BGBIN')
-            ->line('Merci d\'avoir passer commande chez Bgbin nous vous enverrons un dévis sous peu')
-            ->line('BGBIN vous notifieras via un mail sur votre portable');
+            ->subject('Commande Recu')
+            ->view('order_mail');
             // ->action($this->details['actionText'], $this->details['actionurl'])
             // ->line($this->details['message']);
     }
