@@ -48,9 +48,17 @@ class ProductController extends Controller
     public function homme()
     {
         // $products = Product::pluck('id', 'category_id', 'images', 'sub_category_id', 'name');
-        $products = Product::with(['categories', 'sub_categories'])->get();
+        try {
+            $products = Product::with(['categories', 'sub_categories'])->get();
+            $existsSubCategory1 = Product::where('sub_category_id', 1)->exists();
+            $existsSubCategory2 = Product::where('sub_category_id', 2)->exists();
+            $existsSubCategory3 = Product::where('sub_category_id', 3)->exists();
+        } catch (\Throwable $th) {
+            //throw $th;
+            dd($th->getMessage());
+        }
         // $products = Product::select('id', 'category_id', 'images', 'sub_category_id', 'name')->latest()->paginate(20);
-        return view('homme', compact('products'));
+        return view('homme', compact('products', 'existsSubCategory3', 'existsSubCategory1', 'existsSubCategory2'));
 
     }
 
@@ -63,9 +71,14 @@ class ProductController extends Controller
     {
         // $products = Product::where('category_id', 2)->latest()->paginate(30);
         $products = Product::with(['categories', 'sub_categories'])->get();
+        $existsSubCategory4 = Product::where('sub_category_id', 4)->exists();
+        $existsSubCategory5 = Product::where('sub_category_id', 5)->exists();
+        $existsSubCategory6 = Product::where('sub_category_id', 6)->exists();
+        $existsSubCategory7 = Product::where('sub_category_id', 7)->exists();
+
 
         // $products = Product::select('id', 'category_id', 'images', 'sub_category_id', 'name')->latest()->paginate(20);
-        return view('femme', compact('products'));
+        return view('femme', compact('products', 'existsSubCategory4', 'existsSubCategory5', 'existsSubCategory6', 'existsSubCategory7'));
 
     }
 

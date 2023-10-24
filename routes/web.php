@@ -37,7 +37,7 @@ Route::middleware('language')->prefix('/')->group(function() {
     Route::get('/haute-couture', [OrderController::class, 'order'])->name('order');
     Route::get('/a-propos', [ProductController::class, 'about'])->name('about');
     Route::get('/FaQs', [ProductController::class, 'FaQs'])->name('FaQs');
-    
+
     Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
     Route::match(['get', 'post'], '/contact/send', [ContactController::class, 'sendMail'])->name('sendMail');
 
@@ -69,6 +69,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function() {
 
 
     Route::match(['get', 'post'], '/commandes', [AdminController::class, 'orders'])->name('orders');
+    Route::delete('/commandes/delete/{id}', [AdminController::class, 'destroyOrder'])->name('destroyOrder');
 
     Route::delete('/produits/delete/{id}', [AdminController::class, 'destroyProduct'])->name('destroyProduct');
 

@@ -39,7 +39,7 @@ class ContactController extends Controller
             ];
 
             // dd($data);
-            Mail::to('houssouelvis@gmail.com')->send(new ContactNotification($data));
+            Mail::to('bgbincreations@gmail.com')->send(new ContactNotification($data));
 
             return redirect()->back()->with('success', 'votre message a bien été enregistrer vous aurez une reponse sous peu');
 

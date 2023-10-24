@@ -51,11 +51,7 @@
                     <td>  {{$order->images}} </td>
 
                     <td>
-                        <form action=" {{ route('destroyProduct', $order->id) }} " method="POST">
-                                @csrf
-                            <span class="edit">
-                                <a class="btn btn-primary" href="">Edit</a>
-                            </span>
+                        <form action=" {{ route('destroyOrder', $order->id) }} " method="POST">
                             @csrf
                             @method('DELETE')
                             <span class="del">
