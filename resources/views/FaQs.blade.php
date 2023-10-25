@@ -2,26 +2,104 @@
 
 @section('content')
 
-<h1 class="text-center" id="popular">{!! __("message.faqs 1") !!}</h1>
-<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2 py-5">
+<h1 class="text-center py-5" id="popular">{!! __("message.faqs 1") !!}</h1>
+<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2">
     <div class="col align-items-center text-start">
-        @foreach (array_combine($titles, $answers) as $title => $answer)
-                <div class="dropbox">
-                    <div class="dropbox-text d-flex justify-content-between">
-                        <p> {{$title}} </p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                        </svg>
-                    </div>
-                    <div class="dropbox-menu d-flex justify-content-between">
-                        <p class="dropbox-body"> {{$answer}} </p>
-                    </div>
-                    <div><hr class="divider"></div>
-                </div>
-        @endforeach
+        <div class="dropbox">
+            <div class="dropbox-text d-flex justify-content-between">
+                <p> {!! __("message.faq 1") !!}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </div>
+            <div class="dropbox-menu d-flex justify-content-between">
+                <p class="dropbox-body">{!! __("message.faq 2") !!}</p>
+            </div>
+            <div><hr class="divider"></div>
+        </div>
+    </div>
+</div>
+
+<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2">
+    <div class="col align-items-center text-start">
+        <div class="dropbox">
+            <div class="dropbox-text d-flex justify-content-between">
+                <p>{!! __("message.faq 3") !!}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </div>
+            <div class="dropbox-menu d-flex justify-content-between">
+                <p class="dropbox-body">{!! __("message.faq 4") !!}</p>
+            </div>
+            <div><hr class="divider"></div>
+        </div>
+    </div>
+</div>
+
+<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2">
+    <div class="col align-items-center text-start">
+        <div class="dropbox">
+            <div class="dropbox-text d-flex justify-content-between">
+                <p> {!! __("message.faq 5") !!}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </div>
+            <div class="dropbox-menu d-flex justify-content-between">
+                <p class="dropbox-body">{!! __("message.faq 6") !!}</p>
+            </div>
+            <div><hr class="divider"></div>
+        </div>
+    </div>
+</div>
+
+<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2">
+    <div class="col align-items-center text-start">
+        <div class="dropbox">
+            <div class="dropbox-text d-flex justify-content-between">
+                <p>{!! __("message.faq 7") !!}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </div>
+            <div class="dropbox-menu d-flex justify-content-between">
+                <p class="dropbox-body">{!! __("message.faq 8") !!}</p>
+            </div>
+            <div><hr class="divider"></div>
+        </div>
+    </div>
+</div>
+
+<div class="d-lg-flex flex-row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 align-items-center justify-content-center text-center mb-2">
+    <div class="col align-items-center text-start">
+        <div class="dropbox">
+            <div class="dropbox-text d-flex justify-content-between">
+                <p>{!! __("message.faq 9") !!}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </div>
+            <div class="dropbox-menu d-flex justify-content-between">
+                <p class="dropbox-body"> {!! __("message.faq 10") !!}</p>
+            </div>
+            <div><hr class="divider"></div>
+        </div>
     </div>
 </div>
 

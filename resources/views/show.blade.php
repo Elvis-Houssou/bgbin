@@ -30,30 +30,30 @@
 
                             <br>
                             <div class="col-lg-10">
-                                <h5 >Description : </h5>
+                                <h5 >{!! __("message.show 1") !!} </h5>
                                 <small class="text-body-secondary">{{ $product->description }}</small>
                                 <input type="hidden" value="{{ $product->description }}" name="description">
                             </div>
                             <br>
                             <div class="d-grid gap-2 py-5" >
-                                <input type="submit" class="btn btn-outline-light" id="champ-initial" value="Commander" onclick="afficherChamps()">
+                                <input type="submit" class="btn btn-outline-light" id="champ-initial" value="{!! __("message.show 2") !!}" onclick="afficherChamps()">
                             </div>
 
                             <!-- Ajoutez ces champs dans votre formulaire -->
                             <form id="champs-supplementaires1" style="display: none;" action=" {{ route('StandardOrder', ['id' => $product->id]) }} " method="POST" enctype="multipart/form-data">
                             <div id="champs-supplementaires" class="justify-content-between" style="display: none;">
                                 <div  class="px-1">
-                                    <label for="email">Email:</label>
+                                    <label for="email">{!! __("message.show 3") !!}</label>
                                     <input type="email" name="email" id="email" required>
                                 </div>
                                 <div >
-                                    <label for="phone">Numéro de téléphone:</label>
+                                    <label for="phone">{!! __("message.show 4") !!}</label>
                                     <input type="number" name="phone" id="phone" required>
                                 </div>
                             </div>
                                 @csrf
                                 <div class="d-grid gap-2 py-5" >
-                                    <input type="submit" class="btn btn-outline-light" value="valider" onclick="afficherChamps()">
+                                    <input type="submit" class="btn btn-outline-light" value="{!! __("message.show 5") !!}" onclick="afficherChamps()">
                                 </div>
                             </form>
 

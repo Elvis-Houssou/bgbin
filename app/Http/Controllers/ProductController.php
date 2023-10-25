@@ -98,24 +98,7 @@ class ProductController extends Controller
      */
     public function FaQs()
     {
-        $titles = [
-            "Pouvez vous m'indiquer La situation géographique de votre boutique ?",
-            "Quels sont les modes de payement acceptés ?",
-            "Pouvez vous personnaliser certains produits ?",
-            "Quels sont les frais et délais  de livraison ?",
-            "Quelles sont les matières utilisées pour la confection de vos vêtements ?"
-        ];
-
-        $answers = [
-            "Nous sommes situés en Côte d'Ivoire, Abidjan cocody rue du lycée technique, carrefour pisam, rue B15 , immeuble vieux cocody.",
-            "Nous acceptons ces types de payement: PayPal, Orange money, mtn money, wave, chèque, western union, money Gram, ria",
-            "Oui nous personnalisons le vêtements en fonction de votre demande",
-            "Le montant des frais d'envoi et le delais de livraison sont évalués en fonction de la localisation du client.",
-            "Nos vêtements sont confectionnés Avec avec du pagne tissé 100%coton faits main Assemblé souvent avec d'autres matières comme le lin et le cuir"
-        ];
-
-        return view('FaQs',  compact('titles', 'answers'));
-
+        return view('FaQs');
     }
 
     /**

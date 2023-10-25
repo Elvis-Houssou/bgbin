@@ -11,14 +11,11 @@
                     @if ($product->sub_category_id == 6)
                         <div class="col">
                             <div class="card text-bg-dark bg-black" data-bs-theme="dark">
-                                <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px">
+                                <a href="{{asset('images/'.$product->images) }}" data-lightbox="image-1" data-title="{{$product->name}}"><img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px"></a>
                                 <a href="{{route('show', $product->id)}}" class="nav-link text-light">
-                                    <div class="card-body ">
-                                        <div class=" d-flex justify-content-between align-items-center">
-                                            <h6 class="card-title ">{{$product->categories->gender}}</h6>
-                                            <h6 class="card-text">{{$product->sub_categories->type}}</h6>
-                                        </div>
-                                            <h5 class="card-text ">{{$product->name}}</h5>
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <h6 class="card-title ">{{$product->categories->gender}}</h6>
+                                        <h5 class="card-text ">{{$product->name}}</h5>
                                     </div>
                                 </a>
                             </div>
@@ -38,14 +35,11 @@
                     @if ($product->sub_category_id == 4)
                         <div class="col">
                             <div class="card text-bg-dark bg-black" data-bs-theme="dark">
-                                <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px">
+                                <a href="{{asset('images/'.$product->images) }}" data-lightbox="image-1" data-title="{{$product->name}}"><img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px"></a>
                                 <a href="{{route('show', $product->id)}}" class="nav-link text-light">
-                                    <div class="card-body ">
-                                        <div class=" d-flex justify-content-between align-items-center">
-                                            <h6 class="card-title ">{{$product->categories->gender}}</h6>
-                                            <h6 class="card-text">{{$product->sub_categories->type}}</h6>
-                                        </div>
-                                            <h5 class="card-text ">{{$product->name}}</h5>
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <h6 class="card-title ">{{$product->categories->gender}}</h6>
+                                        <h5 class="card-text ">{{$product->name}}</h5>
                                     </div>
                                 </a>
                             </div>
@@ -65,14 +59,11 @@
                     @if ($product->sub_category_id == 5)
                         <div class="col">
                             <div class="card text-bg-dark bg-black" data-bs-theme="dark">
-                                <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px">
+                                <a href="{{asset('images/'.$product->images) }}" data-lightbox="image-1" data-title="{{$product->name}}"><img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px"></a>
                                 <a href="{{route('show', $product->id)}}" class="nav-link text-light">
-                                    <div class="card-body ">
-                                        <div class=" d-flex justify-content-between align-items-center">
-                                            <h6 class="card-title ">{{$product->categories->gender}}</h6>
-                                            <h6 class="card-text">{{$product->sub_categories->type}}</h6>
-                                        </div>
-                                            <h5 class="card-text ">{{$product->name}}</h5>
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <h6 class="card-title ">{{$product->categories->gender}}</h6>
+                                        <h5 class="card-text ">{{$product->name}}</h5>
                                     </div>
                                 </a>
                             </div>
@@ -92,14 +83,11 @@
                     @if ($product->sub_category_id == 7)
                         <div class="col">
                             <div class="card text-bg-dark bg-black" data-bs-theme="dark">
-                                <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px">
+                                <a href="{{asset('images/'.$product->images) }}" data-lightbox="image-1" data-title="{{$product->name}}"><img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px"></a>
                                 <a href="{{route('show', $product->id)}}" class="nav-link text-light">
-                                    <div class="card-body ">
-                                        <div class=" d-flex justify-content-between align-items-center">
-                                            <h6 class="card-title ">{{$product->categories->gender}}</h6>
-                                            <h6 class="card-text">{{$product->sub_categories->type}}</h6>
-                                        </div>
-                                            <h5 class="card-text ">{{$product->name}}</h5>
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <h6 class="card-title ">{{$product->categories->gender}}</h6>
+                                        <h5 class="card-text ">{{$product->name}}</h5>
                                     </div>
                                 </a>
                             </div>

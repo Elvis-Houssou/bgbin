@@ -57,29 +57,25 @@
         }
     </style>
 
-    <h1 class="text-center display-2 p-5" id="popular">{!! __("message.home 2") !!}</h1>
-    <div class="container-fluid">
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4">
-            @foreach ($products as $product )
-                <div class="col px-1">
-
-                    <div class="card text-bg-dark bg-black mt-5 mx-2" data-bs-theme="dark">
-                        <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="300">
-                        <a href="{{route('show', $product->id)}}" class="nav-link text-light">
-                            <div class="card-body ">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h6 class="card-text">{{$product->categories->gender}}</h6>
-                                    <h6 class="card-text">{{$product->sub_categories->type}}</h6>
-                                </div>
-                                    <h5 class="card-text ">{{$product->name}}</h5>
+    <div class="album py-5">
+        <h1 class="text-center display-2 p-5" id="popular">{!! __("message.home 2") !!}</h1>
+        <div class="album py-5" >
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4  mx-2">
+                @foreach ($products as $product )
+                        <div class="col">
+                            <div class="card text-bg-dark bg-black" data-bs-theme="dark">
+                                <a href="{{route('show', $product->id)}}" class="nav-link text-light">
+                                    <img class="card-img-top" src="{{asset('images/'.$product->images) }}" alt="" height="350px">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <h6 class="card-title ">{{$product->categories->gender}}</h6>
+                                        <h5 class="card-text ">{{$product->name}}</h5>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
+                        </div>
+                @endforeach
+            </div>
         </div>
-
-
     </div>
 
     <h1 class="text-center display-2" id="popular">@BGBIN</h1>

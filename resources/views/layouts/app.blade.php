@@ -13,7 +13,9 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/colonna-mt" rel="stylesheet">
+    <link href="{{asset('css/lightbox.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('favicon.ico')}}">
+
 
 
     <!-- Scripts -->
@@ -122,7 +124,7 @@
                 <div class="collapse navbar-collapse order-lg-3 order-4" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link fs-4 {{ request()->is('haute-couture') ? 'active' : ''}}" id="nav-link" aria-current="page" href="{{route('order')}}">{{__("message.nav_5")}}</a>
+                            <a class="nav-link fs-4 {{ request()->is('haute-couture') ? 'active' : ''}}" id="nav-link" aria-current="page" href="{{route('order')}}">{!! __("message.couture 1") !!}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-4 {{ request()->is('contact') ? 'active' : ''}}" id="nav-link" href="{{route('contact')}}">{{__("message.nav_6")}}</a>
@@ -301,8 +303,13 @@
             </footer>
           </div>
     </div>
+
+    <script src="{{asset('js/lightbox-plus-jquery.js')}}"></script>
 </body>
 </html>
+
+
+
 
 <style>
     @import url('https://fonts.cdnfonts.com/css/colonna-mt');

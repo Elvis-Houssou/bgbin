@@ -7,12 +7,14 @@
             @foreach ($bands as $band )
                     <div class="col">
                         <div class="card text-bg-dark bg-black text-center" data-bs-theme="dark">
-                            <img class="card-img" src="{{asset('images/'.$band->images) }}" alt="" height="250">
-                            <div class="card-img-overlay row align-items-center">
-                                <div>
-                                    <h5 class="card-title display-6 font-weight-bolder">{{$band->title}}</h5>
+                           <a href="{{asset('images/'.$band->images) }}" data-lightbox="image-1" data-title="{{$band->title}}" class="text-white">
+                                <img class="card-img" src="{{asset('images/'.$band->images) }}" alt="" height="250">
+                                <div class="card-img-overlay row align-items-center">
+                                    <div>
+                                        <h5 class="card-title display-6 font-weight-bolder">{{$band->title}}</h5>
+                                    </div>
                                 </div>
-                            </div>
+                           </a>
                         </div>
                     </div>
             @endforeach
