@@ -48,7 +48,7 @@
                     </ul>
                 </div>
 
-                <a class="navbar-brand order-1" href="#">
+                <a class="navbar-brand order-1" href="{{route('mostRecent')}}">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                 width="50pt" height="35pt" viewBox="0 0 502.000000 358.000000"
                                 preserveAspectRatio="xMidYMid meet">
