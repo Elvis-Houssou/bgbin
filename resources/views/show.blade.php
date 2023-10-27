@@ -41,16 +41,22 @@
 
                             <!-- Ajoutez ces champs dans votre formulaire -->
                             <form id="champs-supplementaires1" style="display: none;" action=" {{ route('StandardOrder', ['id' => $product->id]) }} " method="POST" enctype="multipart/form-data">
-                            <div id="champs-supplementaires" class="justify-content-between" style="display: none;">
-                                <div  class="px-1">
-                                    <label for="email">{!! __("message.show 3") !!}</label>
-                                    <input type="email" name="email" id="email" required>
+                                <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between" id="champs-supplementaires">
+                                    <div class="col-auto">
+                                            <label for="email">{!! __("message.show 3") !!}</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="email" name="email" id="email" required>
+                                    </div>
                                 </div>
-                                <div >
-                                    <label for="phone">{!! __("message.show 4") !!}</label>
-                                    <input type="number" name="phone" id="phone" required>
+                                <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between py-3" id="champs-supplementaires">
+                                    <div class="col-auto">
+                                        <label for="phone">{!! __("message.show 4") !!}</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="number" name="phone" id="phone" required>
+                                    </div>
                                 </div>
-                            </div>
                                 @csrf
                                 <div class="d-grid gap-2 py-5" >
                                     <input type="submit" class="btn btn-outline-light" value="{!! __("message.show 5") !!}" onclick="afficherChamps()">
@@ -98,7 +104,7 @@
         var champInitial = document.getElementById('champ-initial');
         var champsSupplementaires1 = document.getElementById('champs-supplementaires1');
         champInitial.classList.add('hidden');
-        champsSupplementaires.style.display = 'flex';
+        champsSupplementaires.style.display = 'initial';
         champsSupplementaires1.style.display = 'block';
     }
 </script>

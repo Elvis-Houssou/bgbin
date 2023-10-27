@@ -85,7 +85,7 @@ return [
     'couture 2' => "Gender",
     'couture 3' => "Select a category",
     'couture 4' => "Garment type",
-    'couture 5' => "Image",
+    'couture 5' => "Choose a reference image",
     'couture 6' => "Your Measurements",
     'couture 7' => "Top length:",
     'couture 8' => "Shoulder:",
@@ -105,6 +105,7 @@ return [
     'couture 22' => "Cotton",
     'couture 23' => "Special Mention",
     'couture 24' => "Description",
+    'couture 25' => "length",
 
     'bandes 1' => "Bands",
 

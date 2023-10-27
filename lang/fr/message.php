@@ -13,7 +13,7 @@ return [
 
     'show 1'=>'Description : ',
     'show 2'=>'Commander ',
-    'show 3'=>'Email: ',
+    'show 3'=>'Entrez Votre adresse mail: ',
     'show 4'=>'Numéro de téléphone: ',
     'show 5'=>'valider',
 
@@ -89,7 +89,7 @@ return [
     'couture 2' => "Genre",
     'couture 3' => "Sélectionnez une catégorie",
     'couture 4' => "Type de vêtement",
-    'couture 5' => "Image",
+    'couture 5' => "Choisissez une image référence",
     'couture 6' => "Vos Mesures",
     'couture 7' => "Longueur du haut :",
     'couture 8' => "Epaule :",
@@ -109,6 +109,7 @@ return [
     'couture 22' => "Coton",
     'couture 23' => "Mention Spéciale",
     'couture 24' => "Description",
+    'couture 25' => "longueur",
 
 
     'bandes 1' => "Bandes",

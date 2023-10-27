@@ -14,7 +14,7 @@
 
                     <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
-                            <label for="inputPassword6" class="col-form-label">Email:</label>
+                            <label for="inputPassword6" class="col-form-label">{!! __("message.show 3") !!}</label>
                         </div>
                         <div class="col-auto">
                             <input type="email" id="inputText" name="email" class="form-control" aria-describedby="textHelpInline">
@@ -23,7 +23,7 @@
 
                     <div class="mb-3 d-lg-flex flex-row g-3 align-items-center justify-content-between">
                         <div class="col-auto">
-                            <label for="inputPassword6" class="col-form-label">Numéro de téléphone:</label>
+                            <label for="inputPassword6" class="col-form-label">{!! __("message.show 4") !!}</label>
                         </div>
                         <div class="col-auto">
                             <input type="number" id="inputText" name="phone" class="form-control" aria-describedby="textHelpInline">
@@ -60,15 +60,27 @@
                     </div>
 
                     <div class="mb-5 d-lg-flex flex-row g-3 align-items-center justify-content-between">
-                        <div class="col-auto">
-                          <label for="inputPassword6" class="col-form-label" >{!! __("message.couture 5") !!}</label>
-                        </div>
-                        <div class="col-auto">
-                            <div class="">
-                                <input class="form-control" type="file" id="formFile" name="images" accept="image/png, image/jpeg">
-                              </div>
-                        </div>
+                        <label for="formFile" id="fileNameLabel" class="col-form-label" data-file-placeholder="{{ __("message.couture 5") }}">{{ __("message.couture 5") }}</label>
+                        <input class="form-control" type="file" id="formFile" name="images" accept="image/png, image/jpeg" onchange="updateFileName()">
                     </div>
+                    <style>
+                        #formFile {
+                            display: none;
+                        }
+                        #fileNameLabel {
+                            text-align: center;
+                            align-items: center;
+                            height: 50px;
+                            width: 100%;
+                            border-radius: 6px;
+                            border: 1px dashed #999;
+                            cursor: pointer;
+                        }
+                        #fileNameLabel:hover {
+                            color: #8373e6;
+                            border: 1px dashed #8373e6;
+                        }
+                    </style>
 
                 <h2 class="mb-5 text-center" id="popular">{!! __("message.couture 6") !!}</h2>
 
@@ -274,22 +286,36 @@
         // $("#pantsForm").show();
 
 
-        // Mettre à jour le champ de mesure initial
-        $("#textVal").text(categorieSelectionnee);
-
         function updateLabel() {
             var nouvelleCategorie = $("#categorieSelect option:selected").text();
             if (nouvelleCategorie === "Sélectionnez une catégorie") {
-                $("#textVal").text("Longueur du haut :");
+                $("#textVal").text("{!! __("message.couture 25") !!} du haut :");
                 $("#pantsForm").show();
             } else if (nouvelleCategorie === "pantalon") {
-                $("#textVal").text(`Longueur ${nouvelleCategorie}`);
+                $("#textVal").text(`{!! __("message.couture 25") !!} ${nouvelleCategorie}`);
                 $("#pantsForm").hide();
             } else {
-                $("#textVal").text(`Longueur ${nouvelleCategorie}`);
+                $("#textVal").text(`{!! __("message.couture 25") !!} ${nouvelleCategorie}`);
                 $("#pantsForm").show();
             }
         }
+
+        $("#formFile").change(updateFileName);
+
+        function updateFileName() {
+            var fileInput = $("#formFile")[0];
+            var fileNameLabel = $("#fileNameLabel");
+
+            // Vérifiez si un fichier a été sélectionné
+            if (fileInput.files.length > 0) {
+                // Mettez à jour le label avec le nom du fichier
+                fileNameLabel.text(fileInput.files[0].name);
+            } else {
+                // Aucun fichier sélectionné, réinitialisez le label
+                fileNameLabel.text(fileNameLabel.data("file-placeholder"));
+            }
+        }
+
     });
 </script>
 
