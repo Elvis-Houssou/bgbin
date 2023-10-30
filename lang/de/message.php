@@ -143,7 +143,7 @@ return [
 
          "mention 4" => "ARTIKEL 1 – DER VERLAG",
 
-     "mention 5" => "Die Bearbeitung und Verwaltung der Veröffentlichung der Website wird durch N'Gbala mit Sitz in Abijan Cocody Danga, Immeuble vieux Cocody, dessen Telefonnummer 2250586279005 und die E-Mail-Adresse bgbincreations @gmail.com gewährleistet .
+     "mention 5" => "Die Bearbeitung und Verwaltung der Veröffentlichung der Website wird durch N'GBALA VALERIE AMOIN MANZOUZOU mit Sitz in Abidjan Cocody Danga, Immeuble vieux Cocody, dessen Telefonnummer 2250586279005 und die E-Mail-Adresse bgbincreations @gmail.com gewährleistet .
 
      Die Person ist unter der Abidjan-Nummer im Handels- und Gesellschaftsregister von Abidjan eingetragen.
      Die innergemeinschaftliche Umsatzsteuer-Identifikationsnummer lautet _______________.

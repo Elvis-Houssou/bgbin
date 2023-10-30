@@ -139,7 +139,7 @@ return [
 
         "mention 4" => "ARTICLE 1 - THE PUBLISHER",
 
-    "mention 5" => "The editing and management of the publication of the Site is ensured by N'Gbala, domiciled Abijan Cocody Danga, Immeuble vieux Cocody, whose telephone number is 2250586279005, and the e-mail address bgbincreations @gmail.com.
+    "mention 5" => "The editing and management of the publication of the Site is ensured by N'GBALA VALERIE AMOIN MANZOUZOU, domiciled Abidjan Cocody Danga, Immeuble vieux Cocody, whose telephone number is 2250586279005, and the e-mail address bgbincreations @gmail.com.
 
     The person is subject to the Abidjan Trade and Companies Register under the Abidjan number.
     The intra-community VAT number is _______________.

@@ -143,7 +143,7 @@ return [
 
         "mention 4" => "ARTICLE 1 - L'EDITEUR",
 
-    "mention 5" => "L’édition et la direction de la publication du Site est assurée par N'Gbala, domiciliée Abijan Cocody Danga, Immeuble vieux Cocody, dont le numéro de téléphone est 2250586279005, et l'adresse e-mail bgbincreations@gmail.com.
+    "mention 5" => "L’édition et la direction de la publication du Site est assurée par N'GBALA VALERIE AMOIN MANZOUZOU, domiciliée Abidjan Cocody Danga, Immeuble vieux Cocody, dont le numéro de téléphone est 2250586279005, et l'adresse e-mail bgbincreations@gmail.com.
 
     La personne est assujettie au Registre du Commerce et des Sociétés de Abidjan sous le numéro Abidjan.
     Le numéro de TVA  intracommunautaire est _______________.

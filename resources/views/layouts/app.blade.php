@@ -404,6 +404,12 @@
 
         img {
             object-fit: cover;
+            vertical-align : top;
+            object-position: top;
+
+            /* object-fit: scale-down; */
+            /* background-position-y: 500px; */
+
         }
 </style>
 
