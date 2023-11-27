@@ -151,6 +151,11 @@
                         <option {{session()->has('lang_code') ? (session()->get('lang_code') == 'de' ? 'selected' : '') : ''}} value="de">Allemand</option>
                     </select>
                 </div>
+                <a href="https://wa.me/22586279005?text=Bonjour%20,%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20v%C3%AAtements.%0APouvez-vous%20m'aider%20?%20">
+                    <div style="position: fixed; right:10px; bottom:20px; z-index:2000;">
+                        <img src="{{url('images/WhatsApp_icon.png')}}" alt="" style="width: 50px;">
+                    </div>
+                </a>
                 @yield('content')
             </div>
         </main>

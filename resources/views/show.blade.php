@@ -30,8 +30,14 @@
 
                             <br>
                             <div class="col-lg-10">
-                                <h5 >{!! __("message.show 1") !!} </h5>
-                                <small class="text-body-secondary">{{ $product->description }}</small>
+                                <h4 >{!! __("message.show 1") !!} </h4>
+                                @php
+                                    $fill = $product->description;
+                                    $new = explode('.', $fill)
+                                @endphp
+                                @foreach ($new as $news)
+                                    <p style="margin-bottom: 10px">{{$news}}.</p>
+                                @endforeach
                                 <input type="hidden" value="{{ $product->description }}" name="description">
                             </div>
                             <br>
